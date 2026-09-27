@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Support - Wellness Clinic{% endblock %}
+{% block nav_support %}active{% endblock %}
+{% block page_title %}Support Tickets{% endblock %}
+
+{% block content %}
+<div class="card">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Issue</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for t in tickets %}
+        <tr>
+            <td>#{{ t.id }}</td>
+            <td>{{ t.customer }}</td>
+            <td>{{ t.issue }}</td>
+            <td>
+                {% if t.priority == "High" %}
+                    <span class="badge badge-high">{{ t.priority }}</span>
+                {% else %}
+                    <span class="badge badge-normal">{{ t.priority }}</span>
+                {% endif %}
+            </td>
+            <td><span class="badge badge-open">{{ t.status }}</span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

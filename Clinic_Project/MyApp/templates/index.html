@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Home - Wellness Clinic{% endblock %}
+{% block nav_home %}active{% endblock %}
+{% block page_title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="card welcome-card">
+    <p class="welcome-text">Manage your patient appointments and support tickets in one place.</p>
+    <div class="quick-links">
+        <a href="/appointment/" class="quick-card">
+            <span class="quick-icon">📅</span>
+            <span class="quick-label">Appointments</span>
+        </a>
+        <a href="/support/" class="quick-card">
+            <span class="quick-icon">☎</span>
+            <span class="quick-label">Support Tickets</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

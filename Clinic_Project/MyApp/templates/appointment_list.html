@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Appointments - Wellness Clinic{% endblock %}
+{% block nav_appt %}active{% endblock %}
+{% block page_title %}Appointments{% endblock %}
+
+{% block content %}
+<div class="card">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for a in appointments %}
+        <tr>
+            <td>#{{ a.id }}</td>
+            <td>{{ a.customer }}</td>
+            <td>{{ a.date }}</td>
+            <td>{{ a.time }}</td>
+            <td><span class="badge badge-confirmed">{{ a.status }}</span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
